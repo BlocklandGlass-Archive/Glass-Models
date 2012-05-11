@@ -1,0 +1,12 @@
+CREATE TABLE users(
+	blid INTEGER NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	PRIMARY KEY(blid)
+);
+
+CREATE TABLE wrappers(
+	pubkey VARCHAR(1000) NOT NULL,
+	blid INTEGER NOT NULL,
+	PRIMARY KEY(pubkey),
+	FOREIGN KEY(blid) REFERENCES users(blid) ON DELETE CASCADE
+);
