@@ -10,10 +10,9 @@ object User extends Table("users") with PrimaryKey[Long] {
 	val pk = blid
 }
 
-object WrapperAccountMapping extends Table("wrappers") with PrimaryKey[Long] {
-	val id = col[Long]("id")
+object WrapperAccountMapping extends Table("wrappers") with PrimaryKey[String] {
 	val pubkey = col[String]("pubkey")
 	val blid = col[Long]("blid")
 
-	val pk = id
+	val pk = pubkey
 }
